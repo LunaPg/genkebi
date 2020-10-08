@@ -25,7 +25,7 @@ export function getHtmlPage(lesson) {
       if (!vocab.length) return;
       console.log("vocb ", vocab);
       try {
-        writeFileSync(`Geni${lesson}`, akebiFormat(vocab[0]));
+        writeFileSync(`Genki${lesson}`, akebiFormat(vocab[0]));
         console.log(`writen ${process.cwd()}/Geni${lesson}`)
       } catch (e) {
         console.error(e);
