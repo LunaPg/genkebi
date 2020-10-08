@@ -1,0 +1,20 @@
+{
+  "name": "genkebi",
+  "version": "1.0.0",
+  "description": "Generate Akebi flash-card from Genki vocab",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Akebi",
+    "Genki",
+    "Japanese"
+  ],
+  "author": "LunaPg",
+  "license": "MIT",
+  "dependencies": {
+    "tabletojson": "^2.0.4"
+  }
+}
