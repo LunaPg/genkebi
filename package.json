@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,6 +16,7 @@
   "author": "LunaPg",
   "license": "MIT",
   "dependencies": {
-    "tabletojson": "^2.0.4"
+    "tabletojson": "^2.0.4",
+    "yargs": "^16.0.3"
   }
 }

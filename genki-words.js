@@ -19,14 +19,11 @@ export function getHtmlPage(lesson) {
   };
   const req = request(options, res => {
     res.on('data', d => {
-      console.log("fileocb ", d.toString());
-
       const vocab = tabletojson.convert(d);
       if (!vocab.length) return;
-      console.log("vocb ", vocab);
       try {
         writeFileSync(`Genki${lesson}`, akebiFormat(vocab[0]));
-        console.log(`writen ${process.cwd()}/Geni${lesson}`)
+        console.log(`File writen in ${process.cwd()}/Geni${lesson}`)
       } catch (e) {
         console.error(e);
       }
