@@ -17,6 +17,7 @@ let argv = yargs(hideBin(process.argv))
   .alias('h', 'help')
   .epilog('Luna 2019')
   .argv;
+console.log(argv.lesson);
 
 
 if (argv.lesson && argv.lesson > 24) {
