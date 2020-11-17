@@ -18,5 +18,12 @@ let argv = yargs(hideBin(process.argv))
   .epilog('Luna 2019')
   .argv;
 
-if (argv.lesson && argv.lesson > 24) return getHtmlPage(argv.lesson);
-else throw new Error(`Lesson number ${arg.lesson} is wrong`) 
+
+if (argv.lesson && argv.lesson > 24) {
+  getHtmlPage(argv.lesson);
+  process.exit(1)
+}
+else {
+  console.log(argv.lesson);
+  throw new Error(`Lesson number ${argv.lesson} is wrong`)
+}
