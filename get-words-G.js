@@ -1,6 +1,6 @@
 import { createRequire } from 'module';
 import { writeFileSync } from 'fs'
-import { akebiFormat } from './akebi-export.js'
+import { dictionnaryAKBFormat } from './dictionnary-AKB-format.js'
 import { request } from 'http';
 const require = createRequire(import.meta.url);
 
@@ -18,11 +18,13 @@ export function getHtmlPage(lesson) {
     timeout: timeoutInMilliseconds
   };
   const req = request(options, res => {
+    
+    
     res.on('data', d => {
       const vocab = tabletojson.convert(d);
       if (!vocab.length) return;
       try {
-        writeFileSync(`Genki${lesson}`, akebiFormat(vocab[0]));
+        writeFileSync(`Genki${lesson}`, dictionnaryAKBFormat(vocab[0]));
         console.log(`File writen in ${process.cwd()}/Geni${lesson}`)
       } catch (e) {
         console.error(e);

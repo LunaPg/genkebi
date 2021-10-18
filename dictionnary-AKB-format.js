@@ -8,7 +8,7 @@
   ]
  */
 
-export function akebiFormat(json) {
+export function dictionnaryAKBFormat(json) {
   let concatenation = "";
   console.log("AKEBI JSON", json)
   json.forEach((e, index) => {
