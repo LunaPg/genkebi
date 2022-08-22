@@ -1,8 +1,5 @@
 import yargs from "yargs";
 import { hideBin } from 'yargs/helpers'
-
-
-
 import { getHtmlPage } from './genki-words.js';
 
 let argv = yargs(hideBin(process.argv))
@@ -17,12 +14,10 @@ let argv = yargs(hideBin(process.argv))
   .alias('h', 'help')
   .epilog('Luna 2019')
   .argv;
-console.log(argv.lesson);
 
-
-if (argv.lesson && argv.lesson > 24) {
+if (argv.lesson && argv.lesson < 24) {
   getHtmlPage(argv.lesson);
-  process.exit(1)
+
 }
 else {
   console.log(argv.lesson);
