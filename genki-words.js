@@ -22,8 +22,8 @@ export function getHtmlPage(lesson) {
       const vocab = tabletojson.convert(d);
       if (!vocab.length) return;
       try {
-        writeFileSync(`Genki${lesson}`, akebiFormat(vocab[0]));
-        console.log(`File writen in ${process.cwd()}/Geni${lesson}`)
+        writeFileSync(`${process.cwd()}/GenkiFile/Genki${lesson}`, akebiFormat(vocab[0]));
+        console.log(`File writen in ${process.cwd()}/Genki${lesson}`)
       } catch (e) {
         console.error(e);
       }
