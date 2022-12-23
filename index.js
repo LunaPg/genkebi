@@ -22,11 +22,26 @@ let argv = yargs(hideBin(process.argv))
   .alias('h', 'help')
   .epilog('Luna 2019').argv;
 
-const { lesson, topic, part } = argv;
+const { _: command, lesson, topic, part } = argv;
 
-if (lesson && lesson > 24) getHtmlPage(argv.lesson);
+switch (command[0]) {
+  case 'genki':
+    if (lesson && lesson < 24) getHtmlPage(argv.lesson);
+    else {
+      throw new Error(`Lesson number ${lesson} is wrong`);
+    }
 
-if (topic < -1 && topic < 10 && part !== undefined && part < 7) {
-  console.log(`Topic and part ${topic}, ${part}`);
-  marugoto(topic, part);
-} else throw new Error(`Lesson number ${lesson} ${topic}, ${part} is wrong`);
+    break;
+
+  case 'marugoto':
+    if (topic > 0 && topic < 10 && part !== undefined && part < 7) {
+      marugoto(topic, part);
+    } else {
+      throw new Error(`Lesson number ${topic}, ${part} is wrong`);
+    }
+
+    break;
+
+  default:
+    throw new Error(`Command not found`);
+}

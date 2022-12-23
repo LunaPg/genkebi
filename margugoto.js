@@ -8,7 +8,6 @@ export function marugoto(topic, part) {
   // Initialize the parser
   const parser = createReadStream(`${process.cwd()}/marugotoCsv/marugoto_intermediate_1.csv`).pipe(
     parse({
-      // CSV options if any
       delimiter: ':',
     }),
   );
@@ -22,17 +21,16 @@ export function marugoto(topic, part) {
     let record;
     while ((record = parser.read()) !== null) {
       if (record[1] == topic && record[2] == part) {
-        console.log(record[1], record[2]);
-
-        records.push({ 0: record[4], 1: record[3], 2: record[5] });
+        records.push({ 0: record[4].replace(/[0-9]/g, ''), 1: record[3].replace(/[0-9]/g, ''), 2: record[5] });
       }
     }
   });
   // Catch any error
   parser.on('error', function (err) {
-    console.error('Caca dans le parsing du csv', err.message, err);
+    console.error('Error whiel parsing CSV file', err.message, err);
   });
-  // Test that the parsed records matched the expected records
+
+  // When parsing is over, write file in akebi format
   parser.on('end', function () {
     try {
       const filePath = `${process.cwd()}/MarugotoFile/Marugoto${topic}-${[part]}`;
