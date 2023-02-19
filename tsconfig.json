@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "lib",
+    "lib": ["esnext", "esnext.array"],
+    "types": ["jest", "node"],
+    "target": "es6",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "noEmitOnError": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "downlevelIteration": true,
+    "resolveJsonModule": true
+  },
+  "assets": ["src/gameConfigs", "src/gameConfigs/dictionary"],
+  "include": ["src/**/*", "tst.js"],
+  "exclude": ["node_modules", "src/__tests__", "lib"]
+}
