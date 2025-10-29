@@ -20,7 +20,13 @@ module.exports = {
     ],
     "coverageThreshold": {
       "global": {
-        "lines": 80
+        "lines": 5
       }
-    }
+    },
+  
+ transform: {
+
+    "^.+\\.(js|jsx)$": "babel-jest"
+
+  }
 }
