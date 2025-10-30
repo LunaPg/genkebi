@@ -10,8 +10,7 @@ describe('akebi-export', () => {
     ]
     const a  = akebiFormat(corpus);
     expect(a).toBeDefined();
-    console.log(a)
-  let expectResult = "";
+    let expectResult = "";
 
     expectResult += `${corpus[1][1]}\n${corpus[1][0]}\n${corpus[1][2]}\n`;
     expect(a).toBe(expectResult);
