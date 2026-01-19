@@ -1,7 +1,7 @@
 # Genkebi
 Welcome to Genkebi.
 
-Genkebi is a Akebi flashcard file generator for Genki vocabulary.
+Genkebi is a Akebi flashcard file generator for Genki and Marugoto vocabulary.
 
 ## Requirement
 ![image](https://user-images.githubusercontent.com/1923204/186033993-7e0a2779-f2bd-43f1-b812-98e1b44e19c0.png)
