@@ -19,6 +19,11 @@ https://play.google.com/store/apps/details?id=com.craxic.akebifree&hl=en_CA&gl=U
 
 Command line usage
 
+$ node index.js genki  1
+$ node index.js marugoto 2 1 0
+
+index.js [command]
+
 ```
 Commands:
   index.js genki <lesson>                   Genki lesson number from 1 to 23
