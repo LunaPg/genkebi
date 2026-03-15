@@ -14,7 +14,7 @@ let argv = yargs(hideBin(process.argv))
   .command({
     command: 'marugoto <volume> <topic> <part>',
     aliases: ['m'],
-    desc: 'Marugoto Intermediatevolume 1 to 2 topic 1 to 9 and part 0 to 6',
+    desc: 'Marugoto Intermediate volume 1 to 2 topic 1 to 9 and part 0 to 6',
     number: true,
     require: true,
   })
