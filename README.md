@@ -20,16 +20,18 @@ https://play.google.com/store/apps/details?id=com.craxic.akebifree&hl=en_CA&gl=U
 Command line usage
 
 ```
-$ node index.js lesson 1
-
-index.js [command]
-
 Commands:
-  index.js lesson <lesson>  Lesson number in genki                  [aliases: l]
+  index.js genki <lesson>                   Genki lesson number from 1 to 23
+                                                                    [aliases: g]
+  index.js marugoto <volume> <topic> <part  Marugoto Intermediate volume 1 to 2
+  >                                         topic 1 to 9 and part 0 to 6
+                                                                    [aliases: m]
 
 Options:
       --version  Show version number                                   [boolean]
   -h, --help     Show help                                             [boolean]
+
+Luna 2019s
 ```
 ## How To ?  
   
