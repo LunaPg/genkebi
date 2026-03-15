@@ -12,9 +12,9 @@ let argv = yargs(hideBin(process.argv))
     require: true,
   })
   .command({
-    command: 'marugoto <topic> <part>',
+    command: 'marugoto <volume> <topic> <part>',
     aliases: ['m'],
-    desc: 'Marugoto topic 1 to 9 and part 0 to 6',
+    desc: 'Marugoto Intermediatevolume 1 to 2 topic 1 to 9 and part 0 to 6',
     number: true,
     require: true,
   })
@@ -22,7 +22,7 @@ let argv = yargs(hideBin(process.argv))
   .alias('h', 'help')
   .epilog('Luna 2019').argv;
 
-const { _: command, lesson, topic, part } = argv;
+const { _: command, volume, lesson, topic, part } = argv;
 
 switch (command[0]) {
   case 'genki':
@@ -34,10 +34,10 @@ switch (command[0]) {
     break;
 
   case 'marugoto':
-    if (topic > 0 && topic < 10 && part !== undefined && part < 7) {
-      marugoto(topic, part);
+    if (volume >0 && volume <3 && topic > 0 && topic < 10 && part !== undefined && part < 7) {
+      marugoto(volume, topic, part);
     } else {
-      throw new Error(`Lesson number ${topic}, ${part} is wrong`);
+      throw new Error(`Volume ${volume} Lesson number ${topic}, ${part} is wrong`);
     }
 
     break;

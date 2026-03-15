@@ -3,10 +3,10 @@ import { akebiFormat } from './akebi-export.js';
 import { createReadStream, writeFileSync } from 'fs';
 import { ensureDirectoryExistence } from './createFolders.js';
 
-export function marugoto(topic, part) {
+export function marugoto(volume, topic, part) {
   const records = [];
   // Initialize the parser
-  const parser = createReadStream(`${process.cwd()}/marugotoCsv/marugoto_intermediate_1.csv`).pipe(
+  const parser = createReadStream(`${process.cwd()}/marugotoCsv/marugoto_intermediate_${volume}.csv`).pipe(
     parse({
       delimiter: ':',
     }),
@@ -33,7 +33,7 @@ export function marugoto(topic, part) {
   // When parsing is over, write file in akebi format
   parser.on('end', function () {
     try {
-      const filePath = `${process.cwd()}/MarugotoFile/Marugoto${topic}-${[part]}`;
+      const filePath = `${process.cwd()}/MarugotoFile/Marugoto-Intermediate-${volume}-${topic}-${[part]}`;
       ensureDirectoryExistence(filePath);
       writeFileSync(filePath, akebiFormat(records));
       console.log(`File writen in ${filePath}`);
